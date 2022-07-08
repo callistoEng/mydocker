@@ -1,0 +1,17 @@
+docker build --tag django_todo:latest .
+## --tag sets the tag for the image
+
+To build and run a Docker container from the Docker image we created above, run the command below.
+
+docker run --name django_todo -d -p 8000:8000 django_todo:latest
+--name sets the name of the Docker container.
+-d makes the image run in detached mode. The image is capable of running in the background.
+-p 8000:8000 maps port 8000 in the Docker container to port 8000 in localhost. (-p could be --publish)
+django_todo: latest specifies which image is used to build the Docker container.
+
+ docker run -d -p 8000:8000 django_todo:latest
+
+ docker run -d -p 6000:8000 django_todo:latest
+ docker run -d -p 8080:8000 -p 5500:8000 django_todo:latest
+
+ http://127.0.0.1:8000/<other parameters>
